@@ -43,7 +43,16 @@ Testes unitários (respostas simuladas): `python -m unittest -v testes`.
 
 Teste de integração (Gemini e APIs reais): `python teste_integracao.py`.
 
-Os resultados observados serão registrados após a execução. A execução de integração exige uma chave válida e cota de API.
+### Resultados observados
+
+A execução nº 1 do workflow [Testes BookAgent](https://github.com/pedro-ribeiro00/dr3-tp3-bookagent/actions) (commit `86f6c2c`) foi concluída com sucesso em 56 segundos, conforme o status do GitHub Actions.
+
+- Busca de livros: passou na validação de uso da ferramenta, retorno de dados e presença do termo Python na resposta.
+- ReAct: passou na validação de chamadas às duas ferramentas, retorno de dados e identificação de Orwell na resposta.
+- Memória: passou na consulta seguinte, na mesma sessão, utilizando o autor da pergunta anterior.
+- Erros e ausência de resultados: os quatro testes unitários passaram com respostas simuladas, incluindo timeout das APIs.
+
+O workflow também verificou a compilação dos módulos Python. A execução de integração exige chave válida e cota de API. Os testes verificam o comportamento do agente; a interface Streamlit não foi avaliada visualmente pelo workflow.
 
 ## Comparação com a abordagem manual
 
